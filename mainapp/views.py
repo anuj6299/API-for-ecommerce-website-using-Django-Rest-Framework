@@ -46,7 +46,6 @@ def service(request):
     serializer = ServiceSerializer(services,many=True)
     return Response(serializer.data)
 
-
 @api_view(['GET'])
 def items(request, user):
     all_items = Item.objects.all()
@@ -57,7 +56,6 @@ def items(request, user):
     serializer = ItemSerializer(item_list,many=True)
     return Response(serializer.data)
 
-
 @api_view(['POST'])
 def edititem(request,user, id):
     item = Item.objects.get(item_id=id)
@@ -65,7 +63,6 @@ def edititem(request,user, id):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
-
 
 @api_view(['GET'])
 def completedorders(request, user):
@@ -80,7 +77,6 @@ def completedorders(request, user):
     serializer = OrderSerializer(order_list,many=True)
     return Response(serializer.data)
 
-
 @api_view(['GET'])
 def pendingorders(request, user):
     orders = Order.objects.all()
@@ -94,7 +90,6 @@ def pendingorders(request, user):
     serializer = OrderSerializer(order_list,many=True)
     return Response(serializer.data)
 
-
 @api_view(['POST'])
 def order(request):
     serializer = OrderSerializer(data=request.data)
@@ -102,13 +97,11 @@ def order(request):
         serializer.save()
     return Response(serializer.data)
 
-
 @api_view(['GET'])
 def profile(request):
     profile = Profile.objects.all()
     serializer = ProfileSerializer(profile,many=True)
     return Response(serializer.data)
-
 
 @api_view(['POST'])
 def update_profile(request, id):
@@ -117,8 +110,6 @@ def update_profile(request, id):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
-
-
 
 @api_view(['GET'])
 def shoplist(request, service, area):
