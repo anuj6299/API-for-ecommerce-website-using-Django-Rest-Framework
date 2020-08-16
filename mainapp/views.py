@@ -122,3 +122,4 @@ def shoplist(request, service, area):
                     shop_list.append(shop)
     serializer = ProfileSerializer(shop_list,many=True)
     return Response(serializer.data)
+
