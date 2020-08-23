@@ -3,7 +3,6 @@ from django.contrib.auth.models import User, AbstractUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     Profile_category = models.CharField(default='User', max_length=100, blank=True)
@@ -40,7 +39,6 @@ class Area(models.Model):
 
     def __str__(self):
         return self.area_name
-
 
 class Item(models.Model):
     item_id = models.IntegerField(primary_key=True)
