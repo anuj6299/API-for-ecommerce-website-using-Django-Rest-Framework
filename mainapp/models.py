@@ -59,7 +59,6 @@ class Service(models.Model):
     def __str__(self):
         return self.service_name
 
-
 class Order(models.Model):
     oder_id = models.IntegerField(primary_key=True)
     buyer_name = models.CharField(max_length=100, blank=True)
