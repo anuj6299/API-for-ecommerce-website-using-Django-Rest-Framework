@@ -90,12 +90,14 @@ def pendingorders(request, user):
     serializer = OrderSerializer(order_list,many=True)
     return Response(serializer.data)
 
+
 @api_view(['POST'])
 def order(request):
     serializer = OrderSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
 
 @api_view(['GET'])
 def profile(request):
