@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import ProfileSerializer, OrderSerializer, ServiceSerializer, CitySerializer, AreaSerializer, ItemSerializer
 
+
 @api_view(['GET'])
 def index(request):
     context = {
